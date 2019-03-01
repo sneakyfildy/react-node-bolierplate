@@ -1,0 +1,19 @@
+html()
+  head
+    title=title
+
+    if !!env.isProd
+        link(rel='stylesheet', href='/app.bundle.min.css')
+
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700')
+
+    meta(contet='text/html; charset=UTF-8', http-equiv='Content-Type')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    script.
+        // some config script here        
+  body()
+    div(id="app")    
+    if !!env.isProd
+        script(type='text/javascript', src='/app.bundle.min.js')
+    else
+        script(type='text/javascript', src='/app.bundle.js')
